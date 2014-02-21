@@ -1,0 +1,35 @@
+{
+  "name": "gulp-po2json",
+  "version": "0.1.0",
+  "description": "Gulp plugin to convert gettext .po files to JSON",
+  "license": "MIT",
+  "repository": "gabegorelick/gulp-po2json",
+  "author": {
+    "name": "Gabe Gorelick"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "po",
+    "gettext"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "gulp-util": "~2.2.14",
+    "through2": "~0.4.1",
+    "po2json": "~0.2.3",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "chai": "~1.9.0"
+  }
+}
