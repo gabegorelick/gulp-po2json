@@ -2,6 +2,7 @@ node_modules
 .*
 !.gitignore
 !.gitattributes
+!.travis.yml
 *.iml
 *.log
 *~
