@@ -3,13 +3,12 @@
 var PluginError = require('plugin-error');
 var through = require('through2');
 var po2json = require('po2json');
-var _ = require('lodash');
 var path = require('path');
 
 var pluginName = 'gulp-po2json';
 
 module.exports = function (config) {
-  config = _.extend({
+  config = Object.assign({
     stringify: true
   }, config);
 
