@@ -43,5 +43,19 @@ describe('gulp-po2json', function () {
         })
       });
     });
+
+    it('should handle po2json errors', function (done) {
+      gulpPo2json()
+        .on('error', function (err) {
+          expect(err).to.be.ok;
+          expect(err).to.be.an.instanceOf(Error);
+          expect(err.plugin).to.equal('gulp-po2json');
+          done();
+        })
+        .write(new Vinyl({
+          path: '/tmp/foo.po',
+          contents: Buffer.from('msgid')
+        }));
+    });
   })
 });

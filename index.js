@@ -23,7 +23,12 @@ module.exports = function (config) {
       return cb();
     }
 
-    file.contents = Buffer.from(po2json.parse(file.contents, config));
+    try {
+      file.contents = Buffer.from(po2json.parse(file.contents, config));
+    } catch (err) {
+      this.emit('error', new PluginError(pluginName, err));
+      return cb();
+    }
 
     var dirname = path.dirname(file.path);
     var basename = path.basename(file.path, '.po');
