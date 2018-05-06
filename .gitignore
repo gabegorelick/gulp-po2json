@@ -4,6 +4,7 @@ node_modules
 !.gitattributes
 !.travis.yml
 *.iml
+*.lock
 *.log
 *~
 \#*\#
