@@ -1,6 +1,6 @@
 'use strict';
 
-var gutil = require('gulp-util');
+var PluginError = require('plugin-error');
 var through = require('through2');
 var po2json = require('po2json');
 var _ = require('lodash');
@@ -20,7 +20,7 @@ module.exports = function (config) {
     }
 
     if (file.isStream()) {
-      this.emit('error', new gutil.PluginError(pluginName, 'Streaming not supported'));
+      this.emit('error', new PluginError(pluginName, 'Streaming not supported'));
       return cb();
     }
 
