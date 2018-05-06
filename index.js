@@ -1,11 +1,11 @@
 'use strict';
 
-var PluginError = require('plugin-error');
-var through = require('through2');
-var po2json = require('po2json');
-var path = require('path');
+const PluginError = require('plugin-error');
+const through = require('through2');
+const po2json = require('po2json');
+const path = require('path');
 
-var pluginName = 'gulp-po2json';
+const pluginName = 'gulp-po2json';
 
 module.exports = function (config) {
   config = Object.assign({
@@ -30,8 +30,8 @@ module.exports = function (config) {
       return cb();
     }
 
-    var dirname = path.dirname(file.path);
-    var basename = path.basename(file.path, '.po');
+    const dirname = path.dirname(file.path);
+    const basename = path.basename(file.path, '.po');
     file.path = path.join(dirname, basename + '.json');
 
     this.push(file);
